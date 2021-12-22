@@ -58,7 +58,10 @@
                   <td><?php echo $client->name?></td>
                   <td><?php echo $client->phone?></td>
                   <td><?php echo $client->address?></td>
-                  <td>  <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button></td>
+                  <td class="d-flex justify-content-around">
+                    <a href="#"><img class="wt-25" src="<?php echo PUBLICROOT?>./img/icons/trash-alt-solid.svg" alt=""/></a>
+                    <a href="#"><img class="wt-25" src="<?php echo PUBLICROOT?>./img/icons/edit-solid.svg" alt=""/></a>
+                  </td>
                 </tr>
                 <tr>
               
