@@ -14,7 +14,8 @@
             "
           >
             <h1 class="h2"><?=$data['title']?></h1>
-            <?php flash('customer_message');?>
+       
+            <?php flash('category_message');?>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
                 <button type="button" class="btn btn-sm btn-outline-secondary">
@@ -35,8 +36,9 @@
           </div>
 
           <h2><?=$data['table']?> 
-          <a href="<?php echo URLROOT; ?>/suppliers/addSupplier" class="btn btn-primary pull-right float-right">
-        <i class="fa fa-pencil"></i> Add a Supplier
+          <!-- Go to categories controller and addCategory method-->
+          <a href="<?php echo URLROOT; ?>/categories/addCategory" class="btn btn-primary pull-right float-right">
+        <i class="fa fa-pencil"></i> Add a Category
       </a>
         </h2>
           <div class="table-responsive">
@@ -45,19 +47,14 @@
                 <tr>
                   <th>Id</th>
                   <th>name</th>
-                  <th>phone</th>
-                  <th>address</th>
-                  <th>operations</th>
+                  <th class="text-center">Operations</th>
                 </tr>
               </thead>
-              <?php foreach($data['suppliers']as $supplier):?>
+              <?php foreach($data['categories']as $category):?>
               <tbody>
                 <tr>
-                  <td><?php echo $supplier->supplier_id?></td>
-                  <td><?php echo $supplier->name?></td>
-                  <td><?php echo $supplier->phone?></td>
-                  <td><?php echo $supplier->address?></td>
-                
+                  <td><?php echo $category->category_id?></td>
+                  <td><?php echo $category->category_name?></td>
                   <td class="d-flex justify-content-around">
                     <a href="#"><img class="wt-25" src="<?php echo PUBLICROOT?>./img/icons/trash-alt-solid.svg" alt=""/></a>
                     <a href="#"><img class="wt-25" src="<?php echo PUBLICROOT?>./img/icons/edit-solid.svg" alt=""/></a>

@@ -5,7 +5,7 @@
     <div class="col-md-6 mx-auto">
         <div class="card card-body bg-light mt-4 ">
             <div class="col-md-6 mx-auto text-center">
-                <h2>Add Customer </h2>
+                <h2>Add a Customer </h2>
             </div>
 
             <!--it's going to the method addCustomer in the Customers Controller class-->

@@ -35,7 +35,7 @@
 
           <h2><?=$data['table']?> 
           <a href="<?php echo URLROOT; ?>/posts/add" class="btn btn-primary pull-right float-right">
-        <i class="fa fa-pencil"></i> Add Supplier
+        <i class="fa fa-pencil"></i> Add a Supply
       </a>
         </h2>
           <div class="table-responsive">

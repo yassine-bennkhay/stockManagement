@@ -37,7 +37,7 @@
           <h2><?=$data['table']?> 
           <!-- Go to customers controller and addCustomer method-->
           <a href="<?php echo URLROOT; ?>/customers/addCustomer" class="btn btn-primary pull-right float-right">
-        <i class="fa fa-pencil"></i> Add Customer
+        <i class="fa fa-pencil"></i> Add a Customer
       </a>
         </h2>
           <div class="table-responsive">

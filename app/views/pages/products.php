@@ -36,7 +36,7 @@
 
           <h2><?=$data['table']?> 
           <a href="<?php echo URLROOT; ?>/products/addProduct" class="btn btn-primary pull-right float-right">
-        <i class="fa fa-pencil"></i> Add Product
+        <i class="fa fa-pencil"></i> Add a Product
       </a>
         </h2>
         
