@@ -47,6 +47,18 @@ class Supplier
         }
     }
 
+    public function deleteASupplier($id){
+        $this->db->query('DELETE FROM suppliers WHERE supplier_id=:supplier_id');
+        //Bind values
+        $this->db->bind(':supplier_id', $id);
+        //execute
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function getSupplierById($id)
     {
         $this->db->query('SELECT * FROM suppliers WHERE supplier_id= :id');

@@ -136,4 +136,17 @@ class Suppliers extends Controller
       $this->view('pages/edit_supplier', $data);
     }
   }
+
+  public function deleteSupplier($id){
+if($_SERVER['REQUEST_METHOD']=='POST'){
+if($this->supplierModel->deleteASupplier($id)){
+  flash('delete_message','Supplier has been removed successfully!');
+  redirect('/suppliers/suppliers');
+}else{
+  die('Something went wrong!');
+}
+}else{
+  redirect('suppliers');
+}
+  }
 }

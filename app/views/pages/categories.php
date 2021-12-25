@@ -16,6 +16,7 @@
             <h1 class="h2"><?=$data['title']?></h1>
        
             <?php flash('category_message');?>
+            <?php flash('category_edit_message');?>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
                 <button type="button" class="btn btn-sm btn-outline-secondary">
@@ -56,8 +57,13 @@
                   <td><?php echo $category->category_id?></td>
                   <td><?php echo $category->category_name?></td>
                   <td class="d-flex justify-content-around">
-                    <a href="#"><img class="wt-25" src="<?php echo PUBLICROOT?>./img/icons/trash-alt-solid.svg" alt=""/></a>
-                    <a href="#"><img class="wt-25" src="<?php echo PUBLICROOT?>./img/icons/edit-solid.svg" alt=""/></a>
+                  <td class="d-flex justify-content-around">
+              <form class="pull-right" action="<?php echo URLROOT; ?>/suppliers/deleteSupplier/<?php echo $supplier->supplier_id ?>" method="post">
+                <input type="submit" value="Delete" class="btn btn-danger">
+              </form>
+
+              <a value="Edit" class="btn btn-primary" href="<?php echo URLROOT; ?>/categories/editCategory/<?php echo $category->category_id ?>">Edit</a>
+            </td>
                   </td>
                 </tr>
                 <tr>

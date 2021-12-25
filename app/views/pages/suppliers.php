@@ -13,6 +13,7 @@
             ">
     <h1 class="h2"><?= $data['title'] ?></h1>
     <?php flash('customer_message'); ?>
+    <?php flash('delete_message'); ?>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group mr-2">
         <button type="button" class="btn btn-sm btn-outline-secondary">
@@ -42,7 +43,7 @@
           <th>name</th>
           <th>phone</th>
           <th>address</th>
-          <th>operations</th>
+          <th class="text-center">operations</th>
         </tr>
       </thead>
       <?php foreach ($data['suppliers'] as $supplier) : ?>
@@ -54,11 +55,11 @@
             <td><?php echo $supplier->address ?></td>
 
             <td class="d-flex justify-content-around">
-
               <form class="pull-right" action="<?php echo URLROOT; ?>/suppliers/deleteSupplier/<?php echo $supplier->supplier_id ?>" method="post">
-                <a href="<?php echo URLROOT; ?>/suppliers/deleteSupplier/<?php echo $supplier->supplier_id ?>"><img class="wt-25" src="<?php echo PUBLICROOT ?>./img/icons/trash-alt-solid.svg" alt="" /></a>
+                <input type="submit" value="Delete" class="btn btn-danger">
               </form>
-              <a href="<?php echo URLROOT; ?>/suppliers/editSupplier/<?php echo $supplier->supplier_id ?>"><img class="wt-25" src="<?php echo PUBLICROOT ?>./img/icons/edit-solid.svg" alt="" /></a>
+
+              <a value="Edit" class="btn btn-primary" href="<?php echo URLROOT; ?>/suppliers/editSupplier/<?php echo $supplier->supplier_id ?>">Edit</a>
             </td>
           </tr>
           <tr>
