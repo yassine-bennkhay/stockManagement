@@ -1,17 +1,23 @@
 <?php
-  class Dashboard extends Controller {
-    public function __construct()
-    {
-        if(!isLoggedIn()){
-            redirect('users/login');
-        }
+class Dashboard extends Controller
+{
+  public function __construct()
+  {
+    if (!isLoggedIn()) {
+      redirect('users/login');
     }
-    public function index(){
-      $data = [
-        'title' => 'Dashboard',
-      ];
-     
-      $this->view('pages/dashboard', $data);
-    }
-   
+
+    $this->dashboardModel = $this->model('Dashboards');
   }
+  public function index()
+  {
+    $count = $this->dashboardModel->tableCount();
+    $data = [
+      'title' => 'Dashboard',
+      'count' => $count,
+    ];
+
+    $this->view('pages/dashboard', $data);
+  }
+ 
+}

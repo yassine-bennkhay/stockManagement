@@ -146,7 +146,7 @@ if($this->supplierModel->deleteASupplier($id)){
   die('Something went wrong!');
 }
 }else{
-  redirect('suppliers');
+  redirect('/suppliers/suppliers');
 }
   }
 }

@@ -39,6 +39,17 @@ class Category{
             return false;
         }
     }
+    public function deleteACategory($id){
+        $this->db->query('DELETE FROM category WHERE category_id=:category_id');
+        //Bind values
+        $this->db->bind(':category_id', $id);
+        //execute
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public function getCategoryById($id)
     {

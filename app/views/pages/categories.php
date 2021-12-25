@@ -16,6 +16,7 @@
             <h1 class="h2"><?=$data['title']?></h1>
        
             <?php flash('category_message');?>
+            <?php flash('delete_category_message');?>
             <?php flash('category_edit_message');?>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
@@ -58,7 +59,7 @@
                   <td><?php echo $category->category_name?></td>
                   <td class="d-flex justify-content-around">
                   <td class="d-flex justify-content-around">
-              <form class="pull-right" action="<?php echo URLROOT; ?>/suppliers/deleteSupplier/<?php echo $supplier->supplier_id ?>" method="post">
+              <form class="pull-right" action="<?php echo URLROOT; ?>/categories/deleteCategory/<?php echo $category->category_id ?>" method="post">
                 <input type="submit" value="Delete" class="btn btn-danger">
               </form>
 

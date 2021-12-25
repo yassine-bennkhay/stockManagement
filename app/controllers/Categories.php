@@ -110,4 +110,17 @@ class Categories extends Controller{
           $this->view('pages/edit_category', $data);
         }
       }
+
+      public function deleteCategory($id){
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+        if($this->categoryModel->deleteACategory($id)){
+          flash('delete_category_message','The Category has been removed successfully!');
+          redirect('/categories/categories');
+        }else{
+          die('Something went wrong!');
+        }
+        }else{
+          redirect('/categories/categories');
+        }
+          }
 }
