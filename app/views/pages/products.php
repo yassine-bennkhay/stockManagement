@@ -15,6 +15,7 @@
           >
             <h1 class="h2"><?=$data['title']?></h1>
             <?php echo flash('product_message')?>
+            <?php echo flash('delete_product_message')?>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
                 <button type="button" class="btn btn-sm btn-outline-secondary">
@@ -67,9 +68,12 @@
                   <td><?php echo $product->image_url?></td>
                   <td><?php echo $product->name?></td>
                   <td class="d-flex justify-content-around">
-                    <a href="#"><img class="wt-25" src="<?php echo PUBLICROOT?>./img/icons/trash-alt-solid.svg" alt=""/></a>
-                    <a href="#"><img class="wt-25" src="<?php echo PUBLICROOT?>./img/icons/edit-solid.svg" alt=""/></a>
-                  </td>
+              <form class="pull-right" action="<?php echo URLROOT; ?>/products/deleteProduct/<?php echo $product->product_id ?>" method="post">
+                <input type="submit" value="Delete" class="btn btn-danger">
+              </form>
+
+              <a value="Edit" class="btn btn-primary" href="<?php echo URLROOT; ?>/products/editProduct/<?php echo $product->product_id ?>">Edit</a>
+            </td>
                   
                 </tr>
                 <tr>

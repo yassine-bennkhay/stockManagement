@@ -5,11 +5,11 @@
     <div class="col-md-6 mx-auto">
         <div class="card card-body bg-light mt-4 ">
             <div class="col-md-6 mx-auto text-center">
-                <h2>Add a Product </h2>
+                <h2>Edit a Product </h2>
             </div>
 
             <!--it's going to the method addProduct in the Products Controller class-->
-            <form action="<?php echo URLROOT ?>/products/addProduct" method="POST">
+            <form action="<?php echo URLROOT ?>/products/editProduct/<?php echo $data['product_id']?>" method="POST">
                 <div class="form-group">
                     <label for="product_name">Name:<sup>*</sup></label>
                     <input type="text" name="product_name" class="form-control form-control-lg <?php echo (!empty($data['name_err'])) ? 'is-invalid' : ''; ?> " value=<?php echo $data['product_name'] ?>>
@@ -26,13 +26,6 @@
                     <span class="invalid-feedback"><?php echo $data['selling_price_err'] ?></span>
                 </div>
 
-                <div class="form-group">
-                    <label for="images">Image:<sup>*</sup></label>
-   
-                    <input type="file" name="fileToUpload" class="form-control form-control-lg <?php echo (!empty($data['image_err'])) ? 'is-invalid' : ''; ?> " value=<?php echo $data['image_url'] ?>>
-                    <span class="invalid-feedback"><?php echo $data['image_err'] ?></span>
-                </div>
-
                 <select class="custom-select" name="category_id">
                     <option selected>Select a Category</option>
                     <?php foreach ($data['categories'] as $category) : ?>
@@ -41,7 +34,7 @@
                 </select>
                 <div class="row">
                     <div class="col">
-                        <input type="submit" value="Add" class="btn btn-success btn-block">
+                        <input type="submit" value="Edit" class="btn btn-success btn-block">
                     </div>
 
                 </div>

@@ -10,5 +10,6 @@ define('APPROOT', dirname(dirname(__FILE__)));
 //URL ROOT
 define('URLROOT','http://localhost/stockManagement');
 define('PUBLICROOT',URLROOT.'/public');
+define('IMAGEDERICTOREY',PUBLICROOT.'/img/');
 //SITE NAME
 define('SITENAME','Stock Management');

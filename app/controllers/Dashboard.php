@@ -14,7 +14,7 @@ class Dashboard extends Controller
     $count = $this->dashboardModel->tableCount();
     $data = [
       'title' => 'Dashboard',
-      'count' => $count,
+      //'count' => $count,
     ];
 
     $this->view('pages/dashboard', $data);
