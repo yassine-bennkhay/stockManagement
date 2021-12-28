@@ -17,7 +17,7 @@ class Categories extends Controller{
           'categories'=>$categories,
         ];
        // $this->view('pages/add_product',$data);
-        $this->view('pages/categories',$data);
+        $this->view('pages/categories/categories',$data);
       }
 
 
@@ -53,14 +53,14 @@ class Categories extends Controller{
             }
           } else {
             //Load the view with errors
-            $this->view('pages/add_category', $data);
+            $this->view('pages/categories/add_category', $data);
           }
         } else {
           $data = [
             'category_name' => '',
             'category_name_err' => '',
           ];
-          $this->view('pages/add_category', $data);
+          $this->view('pages/categories/add_category', $data);
         }
       }
 
@@ -97,7 +97,7 @@ class Categories extends Controller{
             }
           } else {
             //Load the view with errors
-            $this->view('pages/edit_category', $data);
+            $this->view('pages/categories/edit_category', $data);
           }
         } else {
           $category = $this->categoryModel->getCategoryById($id);
@@ -107,7 +107,7 @@ class Categories extends Controller{
             'category_name' => $category->category_name,
            
           ];
-          $this->view('pages/edit_category', $data);
+          $this->view('pages/categories/edit_category', $data);
         }
       }
 

@@ -23,7 +23,7 @@ class Products extends Controller
       'table' => 'Products Table',
       'products' => $products,
     ];
-    $this->view('pages/products', $data);
+    $this->view('pages/products/products', $data);
   }
 
 
@@ -90,7 +90,7 @@ $isUploaded=move_uploaded_file($_FILES["fileToUpload"]["name"], $target_file);
         }
       } else {
         //Load the view with errors
-        $this->view('pages/add_product', $data);
+        $this->view('pages/products/add_product', $data);
       }
     } else {
       $categories = $this->categoryModel->getCategory();
@@ -103,7 +103,7 @@ $isUploaded=move_uploaded_file($_FILES["fileToUpload"]["name"], $target_file);
         'quantity' => '',
         'categories' => $categories
       ];
-      $this->view('pages/add_product', $data);
+      $this->view('pages/products/add_product', $data);
     }
   }
 
@@ -159,7 +159,7 @@ $isUploaded=move_uploaded_file($_FILES["fileToUpload"]["name"], $target_file);
         }
       } else {
         //Load the view with errors
-        $this->view('pages/edit_product', $data);
+        $this->view('pages/products/edit_product', $data);
       }
     } else {
       $categories = $this->categoryModel->getCategory();
@@ -173,7 +173,7 @@ $isUploaded=move_uploaded_file($_FILES["fileToUpload"]["name"], $target_file);
         //'quantity' => '',
         'categories' => $categories
       ];
-      $this->view('pages/edit_product', $data);
+      $this->view('pages/products/edit_product', $data);
     }
   }
 

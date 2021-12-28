@@ -17,7 +17,7 @@ class Customers extends Controller
       'table' => 'Customers Table',
       'clients' => $clients,
     ];
-    $this->view('pages/customers', $data);
+    $this->view('pages/customers/customers', $data);
   }
 
 
@@ -62,7 +62,7 @@ class Customers extends Controller
         }
       } else {
         //Load the view with errors
-        $this->view('pages/add_customer', $data);
+        $this->view('pages/customers/add_customer', $data);
       }
     } else {
       $data = [
@@ -70,7 +70,7 @@ class Customers extends Controller
         'phone' => '',
         'address' => '',
       ];
-      $this->view('pages/add_customer', $data);
+      $this->view('pages/customers/add_customer', $data);
     }
   }
 
@@ -128,7 +128,7 @@ class Customers extends Controller
         'phone' =>  $customer->phone,
         'address' =>  $customer->address,
       ];
-      $this->view('pages/edit_customer', $data);
+      $this->view('pages/customers/edit_customer', $data);
     }
   }
 
@@ -142,7 +142,7 @@ class Customers extends Controller
       die('Something went wrong!');
     }
     }else{
-      redirect('/suppliers/suppliers');
+      redirect('/customers/customers');
     }
       }
 }

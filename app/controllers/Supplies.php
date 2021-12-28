@@ -12,10 +12,10 @@ class Supplies extends Controller{
     public function supplies(){
         $supplies=$this->supplyModel->getSupply();
         $data=[
-          'title'=>'Suppliers',
-          'table'=>'Supplieres Table',
+          'title'=>'Supplies',
+          'table'=>'Supplies Table',
           'supplies'=>$supplies,
         ];
-        $this->view('pages/supplies',$data);
+        $this->view('pages/supplies/supplies',$data);
       }
 }

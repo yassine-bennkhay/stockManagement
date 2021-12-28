@@ -18,7 +18,7 @@ class Suppliers extends Controller
       'table' => 'Supplieres Table',
       'suppliers' => $suppliers,
     ];
-    $this->view('pages/suppliers', $data);
+    $this->view('pages/suppliers/suppliers', $data);
   }
 
 
@@ -63,7 +63,7 @@ class Suppliers extends Controller
         }
       } else {
         //Load the view with errors
-        $this->view('pages/add_supplier', $data);
+        $this->view('pages/suppliers/add_supplier', $data);
       }
     } else {
       $data = [
@@ -71,7 +71,7 @@ class Suppliers extends Controller
         'phone' => '',
         'address' => '',
       ];
-      $this->view('pages/add_supplier', $data);
+      $this->view('pages/suppliers/add_supplier', $data);
     }
   }
 
@@ -120,7 +120,7 @@ class Suppliers extends Controller
         }
       } else {
         //Load the view with errors
-        $this->view('pages/edit_supplier', $data);
+        $this->view('pages/suppliers/edit_supplier', $data);
       }
     } else {
 
@@ -133,7 +133,7 @@ class Suppliers extends Controller
         'phone' =>  $supplier->phone,
         'address' =>  $supplier->address,
       ];
-      $this->view('pages/edit_supplier', $data);
+      $this->view('pages/suppliers/edit_supplier', $data);
     }
   }
 

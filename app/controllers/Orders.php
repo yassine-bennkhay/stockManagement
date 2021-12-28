@@ -17,7 +17,7 @@ class Orders extends Controller{
           'orders'=>$orders,
         
         ];
-        $this->view('pages/orders',$data);
+        $this->view('pages/orders/orders',$data);
   
       }
 
