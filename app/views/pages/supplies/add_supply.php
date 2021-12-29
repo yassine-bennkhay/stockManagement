@@ -26,11 +26,7 @@
                     <input type="text" name="product_id" class="form-control form-control-lg <?php echo (!empty($data['product_id_err'])) ? 'is-invalid' : ''; ?> " value=<?php echo $data['product_id'] ?>>
                     <span class="invalid-feedback"><?php echo $data['product_id_err'] ?></span>
                 </div>
-                <div class="form-group">
-                    <label for="supply_id">Supply Id:<sup>*</sup></label>
-                    <input type="text" name="supply_id" class="form-control form-control-lg <?php echo (!empty($data['product_id_err'])) ? 'is-invalid' : ''; ?> " value=<?php echo $data['product_id'] ?>>
-                    <span class="invalid-feedback"><?php echo $data['product_id_err'] ?></span>
-                </div>
+             
                 <div class="row">
                     <div class="col">
                         <input type="submit" value="Add" class="btn btn-success btn-block">

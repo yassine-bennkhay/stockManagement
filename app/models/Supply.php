@@ -42,7 +42,24 @@ class Supply{
             return true;
         } else {
             return false;
-        }
+        }  
+    }
+
+
+    public function getSupplyById($id)
+    {
+        $this->db->query('SELECT * FROM supplies WHERE supply_id= :id');
+        $this->db->bind(':id', $id);
+        $row = $this->db->single();
+        return $row;
+    }
+
+    public function getSupplyProductsById($id)
+    {
+        $this->db->query('SELECT * FROM product_supplies WHERE supplies_id= :id');
+        $this->db->bind(':id', $id);
+        $row = $this->db->single();
+        return $row;
     }
 
 }

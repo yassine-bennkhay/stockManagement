@@ -58,9 +58,12 @@
                   <td><?php echo $supply->name?></td>
                 
                   <td class="d-flex justify-content-around">
-                    <a href="#"><img class="wt-25" src="<?php echo PUBLICROOT?>./img/icons/trash-alt-solid.svg" alt=""/></a>
-                    <a href="#"><img class="wt-25" src="<?php echo PUBLICROOT?>./img/icons/edit-solid.svg" alt=""/></a>
-                  </td>
+              <form class="pull-right" action="<?php echo URLROOT; ?>/supplies/deleteSupply/<?php echo $supply->supply_id ?>" method="post">
+                <input type="submit" value="Delete" class="btn btn-danger">
+              </form>
+
+              <a value="Edit" class="btn btn-primary" href="<?php echo URLROOT; ?>/supplies/editSupply/<?php echo $supply->supply_id ?>">Edit</a>
+            </td>
                 </tr>
                 <tr>
               
