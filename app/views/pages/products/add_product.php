@@ -9,7 +9,7 @@
             </div>
 
             <!--it's going to the method addProduct in the Products Controller class-->
-            <form action="<?php echo URLROOT ?>/products/addProduct" method="POST">
+            <form action="<?php echo URLROOT ?>/products/addProduct" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="product_name">Name:<sup>*</sup></label>
                     <input type="text" name="product_name" class="form-control form-control-lg <?php echo (!empty($data['name_err'])) ? 'is-invalid' : ''; ?> " value=<?php echo $data['product_name'] ?>>
@@ -28,7 +28,7 @@
 
                 <div class="form-group">
                     <label for="images">Image:<sup>*</sup></label>
-   
+
                     <input type="file" name="fileToUpload" class="form-control form-control-lg <?php echo (!empty($data['image_err'])) ? 'is-invalid' : ''; ?> " value=<?php echo $data['image_url'] ?>>
                     <span class="invalid-feedback"><?php echo $data['image_err'] ?></span>
                 </div>

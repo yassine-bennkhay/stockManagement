@@ -66,4 +66,5 @@ class Supplier
         $row = $this->db->single();
         return $row;
     }
+  
 }

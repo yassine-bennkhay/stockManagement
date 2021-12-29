@@ -31,18 +31,18 @@ class Products extends Controller
   {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-//Upload the image
-$target_dir = PUBLICROOT.'/img/products/';
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-$isUploaded=move_uploaded_file($_FILES["fileToUpload"]["name"], $target_file);
-
+      //Upload the image
+      $filename = $_FILES["fileToUpload"]["name"];
+      $tempname = $_FILES["fileToUpload"]["tmp_name"];
+      $folder   = "img/".basename($filename);
+      $isUploaded=move_uploaded_file($tempname, $folder);
+    
       //Sanitize Customer Array=remove any illegal character
 
       $POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
       $categories = $this->categoryModel->getCategory();
       $data = [
-      'image_url'=>trim($_POST[$target_file]),
+        'image_url' => trim($filename),
         'product_name' => trim($_POST['product_name']),
         'buying_price' => trim($_POST['buying_price']),
         'selling_price' => trim($_POST['selling_price']),
@@ -72,9 +72,9 @@ $isUploaded=move_uploaded_file($_FILES["fileToUpload"]["name"], $target_file);
       if (empty($data['category_id'])) {
         $data['category_id_err'] = 'Please choose a category';
       }
-      if (empty($isUploaded==true)) {
-        flash('product_message', $isUploaded);
-      }
+      // if (empty($isUploaded==true)) {
+      //   flash('product_message', $isUploaded);
+      // }
       
    
 
@@ -83,7 +83,7 @@ $isUploaded=move_uploaded_file($_FILES["fileToUpload"]["name"], $target_file);
       if (empty($data['buying_price_err']) && empty($data['selling_price_err']) && empty($data['name_err']) && empty($data['category_id_err'])) {
         //Validated
         if ($this->productModel->addAProduct($data)) {
-          flash('product_message', $isUploaded);
+      
           redirect('/products/products');
         } else {
           die('Something went wrong');
