@@ -11,10 +11,17 @@ class Dashboard extends Controller
   }
   public function index()
   {
-    $count = $this->dashboardModel->tableCount();
+    $nbrProducts = $this->dashboardModel->productsCount();
+    $nbrCustomers=$this->dashboardModel->customersCount();
+    $nbrSuppliers=$this->dashboardModel->suppliersCount();
+   $nbrOrders=$this->dashboardModel->ordersCount();
+  
     $data = [
       'title' => 'Dashboard',
-      //'count' => $count,
+      'nbrProducts' => $nbrProducts,
+      'nbrCustomers'=>$nbrCustomers,
+      'nbrSuppliers'=>$nbrSuppliers,
+      'nbrOrders'=>$nbrOrders,
     ];
 
     $this->view('pages/dashboard', $data);

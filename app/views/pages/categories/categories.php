@@ -32,7 +32,13 @@
     </div>
   </div>
 
-  <h2><?= $data['table'] ?>
+  <h2 class="d-flex justify-content-between"><?= $data['table'] ?>
+    <form action="<?php echo URLROOT; ?>/categories/searchCategory" method="get">
+      <div class="input-group">
+        <input type="search" name="category_id" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <button type="submit" name="search" class="btn btn-outline-primary">search</button>
+      </div>
+    </form>
     <!-- Go to categories controller and addCategory method-->
     <a href="<?php echo URLROOT; ?>/categories/addCategory" class="btn btn-primary pull-right float-right">
       <i class="fa fa-pencil"></i> Add a Category
@@ -48,10 +54,16 @@
         </tr>
       </thead>
       <?php foreach ($data['categories'] as $category) : ?>
+        <?php if (!isset($category->category_id)) {
+
+          flash('error', 'there is no category associated with this id');
+          flash('error');
+          return;
+        } ?>
         <tbody>
           <tr>
-            <td><?php echo $category->category_id ?></td>
-            <td><?php echo $category->category_name ?></td>
+            <td><?= $category->category_id ?></td>
+            <td><?= $category->category_name ?></td>
             <td class="d-flex justify-content-around">
               <form class="pull-right" action="<?php echo URLROOT; ?>/categories/deleteCategory/<?php echo $category->category_id ?>" method="post">
                 <input type="submit" value="Delete" class="btn btn-danger">

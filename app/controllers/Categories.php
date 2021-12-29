@@ -20,6 +20,25 @@ class Categories extends Controller{
         $this->view('pages/categories/categories',$data);
       }
 
+  public function searchCategory()
+  {
+    if (isset($_GET['category_id'])) {
+      $aCategory = [];
+      $aCategory[0] = $this->categoryModel->getCategoryById($_GET['category_id']);
+      // echo "<pre>";
+      // print_r($aCategory);
+      // return;
+
+      $data = [
+        'title' => 'Categories',
+        'table' => 'Categories Table',
+        'categories' => $aCategory,
+      ];
+
+      $this->view('pages/categories/categories', $data);
+    }
+  }
+
 
 
       public function addCategory()
