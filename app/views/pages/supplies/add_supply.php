@@ -11,7 +11,7 @@
             <!--it's going to the method addSupplier in the Supplier Controller class-->
             <form action="<?php echo URLROOT ?>/supplies/addSupply" method="POST">
             <select class="custom-select" name="supplier_id">
-                    <option selected>Select a Supplier</option>
+                    <option selected>Select a Supplier by his ID</option>
                     <?php foreach ($data['suppliers'] as $supplier) : ?>
                         <option value="<?php echo $supplier->supplier_id ?>"><?php echo $supplier->supplier_id ?></option>
                     <?php endforeach; ?>
