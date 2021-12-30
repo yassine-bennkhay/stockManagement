@@ -64,10 +64,11 @@
       return $this->stmt->execute();
     }
 
-    // Get result set as array of objects
-    public function resultSet(){
+  // Get result set as array of objects
+  public function resultSet($type = PDO::FETCH_OBJ)
+  {
       $this->execute();
-      return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+    return $this->stmt->fetchAll($type);
     }
 
     // Get single record as object

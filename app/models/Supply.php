@@ -14,9 +14,22 @@ class Supply{
         suppliers.supplier_id
          FROM supplies JOIN suppliers 
          on supplies.supplier_id=suppliers.supplier_id;');
-        $results=$this->db->resultSet();
+        $results = $this->db->resultSet(PDO::FETCH_ASSOC);
         return $results;
     }
+    public function getinfo()
+    {
+
+        $this->db->query('
+        
+        SELECT supplies.supply_id,product_supplies.quantity,products.product_name FROM `supplies` join product_supplies JOIN products on supplies.supply_id=product_supplies.supplies_id and products.product_id=product_supplies.product_id;
+
+        ');
+        $results = $this->db->resultSet(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+
 
 
 
@@ -46,21 +59,23 @@ class Supply{
     }
 
 
-    public function getSupplyById($id)
-    {
-        $this->db->query('SELECT * FROM supplies WHERE supply_id= :id');
-        $this->db->bind(':id', $id);
-        $row = $this->db->single();
-        return $row;
-    }
+    // public function getSupplyById($id)
+    // {
+    //     $this->db->query('SELECT * FROM supplies WHERE supply_id= :id');
+    //     $this->db->bind(':id', $id);
+    //     $row = $this->db->single();
+    //     return $row;
+    // }
 
-    public function getSupplyProductsById($id)
-    {
-        $this->db->query('SELECT * FROM product_supplies WHERE supplies_id= :id');
-        $this->db->bind(':id', $id);
-        $row = $this->db->single();
-        return $row;
-    }
+    // public function getSupplyProductsById($id)
+    // {
+    //     $this->db->query('SELECT * FROM product_supplies WHERE supplies_id= :id');
+    //     $this->db->bind(':id', $id);
+    //     $row = $this->db->single();
+    //     return $row;
+    // }
+
+
 
 }
 ?>

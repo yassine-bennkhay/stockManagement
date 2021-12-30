@@ -46,24 +46,27 @@
                   <th>date</th>
                   <th>supplier Id</th>
                   <th>supplier name</th>
-                  <th>operations</th>
+                  <th>Product name</th>
+                  <th>quantity</th>
                 </tr>
               </thead>
               <?php foreach($data['supplies']as $supply):?>
               <tbody>
                 <tr>
-                  <td><?php echo $supply->supply_id?></td>
-                  <td><?php echo $supply->date?></td>
-                  <td><?php echo $supply->supplier_id?></td>
-                  <td><?php echo $supply->name?></td>
+                  <td><?php echo $supply['supply_id']?></td>
+                  <td><?php echo $supply['date']?></td>
+                  <td><?php echo $supply['supplier_id']?></td>
+                  <td><?php echo $supply['name']?></td>
+                  <td><?php echo $supply['product_name']?></td>
+                  <td><?php echo $supply['quantity']?></td>
                 
-                  <td class="d-flex justify-content-around">
+                  <!-- <td class="d-flex justify-content-around">
               <form class="pull-right" action="<?php echo URLROOT; ?>/supplies/deleteSupply/<?php echo $supply->supply_id ?>" method="post">
                 <input type="submit" value="Delete" class="btn btn-danger">
               </form>
 
               <a value="Edit" class="btn btn-primary" href="<?php echo URLROOT; ?>/supplies/editSupply/<?php echo $supply->supply_id ?>">Edit</a>
-            </td>
+            </td> -->
                 </tr>
                 <tr>
               

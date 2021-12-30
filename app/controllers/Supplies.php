@@ -11,11 +11,25 @@ class Supplies extends Controller{
         $this->supplierModel=$this->model('Supplier');
     }
     public function supplies(){
-        $supplies=$this->supplyModel->getSupply();
+    $supplies=$this->supplyModel->getSupply();
+    $more = $this->supplyModel->getinfo();
+    $result =[];
+    for ($i = 0; $i < count($more); $i++) {
+      $result[$i]=array_merge($supplies[$i], $more[$i]);
+    }
+// echo count($supplies);
+// return;
+//   //   echo "<pre>";
+//   print_r($result);
+// // //   //  // print_r($more);
+
+
+//    return;
         $data=[
           'title'=>'Supplies',
           'table'=>'Supplies Table',
-          'supplies'=>$supplies,
+          'supplies'=>$result,
+     // 'more' => $more
         ];
         $this->view('pages/supplies/supplies',$data);
       }
@@ -107,8 +121,8 @@ class Supplies extends Controller{
           //Make sure there are no errors
     
           if (true) {
-            //Validated
-            if ($this->supplyModel->addASupply($data)) {
+        //Validated
+        if ($this->supplyModel->editASupply($data)) {
               flash('customer_message', 'The supply has been added Successfully!');
               redirect('/supplies/supplies');
             } else {
@@ -119,13 +133,14 @@ class Supplies extends Controller{
             $this->view('pages/supplies/edit_supply', $data);
           }
         } else {
-          $suppliers=$this->supplierModel->getSupplier();
+      $suppliers = $this->supplierModel->getSupplier();
           //$supply=$this->supplyModel->getSupplyById($id);
-          $supplyProduct=$this->supplyModel->getSupplyProductsById($id);
+          //$supplyProduct=$this->supplyModel->getSupplyProductsById($id);
 
           $data = [
-            'product_id' => $supplyProduct->product_id,
-            'quantity' =>$supplyProduct->quantity,
+            // 'supplies_id'=>$supplyProduct->supplies_id,
+            // 'product_id' => $supplyProduct->product_id,
+            // 'quantity' =>$supplyProduct->quantity,
             'suppliers'=>$suppliers
           ];
           $this->view('pages/supplies/edit_supply', $data);
