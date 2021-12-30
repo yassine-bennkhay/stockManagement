@@ -17,7 +17,7 @@ class Order{
       on orders.client_id=clients.client_id
       
        ');
-      $results=$this->db->resultSet();
+      $results=$this->db->resultSet(PDO::FETCH_ASSOC);
       return $results;  
     }
 
@@ -45,5 +45,27 @@ class Order{
         } else {
             return false;
         }  
+    }
+
+
+    public function getinfo()
+    {
+
+        $this->db->query('
+        
+        SELECT orders.order_id,product_order.quantity,products.product_name,products.selling_price FROM `orders` join product_order JOIN products on orders.order_id=product_order.order_id and products.product_id=product_order.product_id;
+
+        ');
+        $results = $this->db->resultSet(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+
+    public function getOrderById($id)
+    {
+        $this->db->query('SELECT * FROM orders WHERE order_id= :id');
+        $this->db->bind(':id', $id);
+        $row = $this->db->single();
+        return $row;
     }
 }

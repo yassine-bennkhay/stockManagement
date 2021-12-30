@@ -28,7 +28,6 @@ class Product{
       $this->db->bind(':buying_price', $data['buying_price']);
       $this->db->bind(':selling_price', $data['selling_price']);
       $this->db->bind(':category_id', $data['category_id']);
-      $this->db->bind(':category_id', $data['category_id']);
       $this->db->bind(':admin_id', $data['admin_id']);
     $this->db->bind(':image_url', $data['image_url']);
       //execute

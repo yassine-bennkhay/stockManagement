@@ -65,10 +65,12 @@ class Customers extends Controller
         $this->view('pages/customers/add_customer', $data);
       }
     } else {
+      $clients=$this->clientModel->getClient();
       $data = [
         'name' => '',
         'phone' => '',
         'address' => '',
+        'clients'=>$clients,
       ];
       $this->view('pages/customers/add_customer', $data);
     }

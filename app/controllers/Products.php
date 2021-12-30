@@ -190,4 +190,6 @@ class Products extends Controller
       redirect('/products/products');
     }
       }
+
+     
 }

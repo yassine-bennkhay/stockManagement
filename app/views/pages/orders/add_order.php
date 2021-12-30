@@ -12,8 +12,8 @@
             <form action="<?php echo URLROOT ?>/orders/addOrder" method="POST">
             <select class="custom-select" name="client_id">
                     <option selected>Select a Client by his ID</option>
-                    <?php foreach ($data['orders'] as $order) : ?>
-                        <option value="<?php echo $order->client_id ?>"><?php echo $order->client_id ?></option>
+                    <?php foreach ($data['clients'] as $client) : ?>
+                        <option value="<?= $client['clientId']?>"><?= $client['clientId'].' : '.$client['name'] ?></option>
                     <?php endforeach; ?>
                 </select>
                 <div class="form-group">

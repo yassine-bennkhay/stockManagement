@@ -11,11 +11,17 @@ class Orders extends Controller{
     public function orders(){
         //get Orders
         $orders=$this->orderModel->getOrder();
+
+    $more = $this->orderModel->getinfo();
+    $result = [];
+    for ($i = 0; $i < count($more); $i++) {
+      $result[$i] = array_merge($orders[$i], $more[$i]);
+    }
         
         $data=[
           'title'=>'Orders',
           'table'=>'Orders Table',
-          'orders'=>$orders,
+      'orders' => $result,
         
         ];
         $this->view('pages/orders/orders',$data);
@@ -67,14 +73,40 @@ class Orders extends Controller{
           }
         } else {
           $orders=$this->orderModel->getOrder();
+      // echo "<pre>";
+      // print_r($orders);
+      // return;
           $data = [
             'client_id' => '',
             'quantity' => '',
             'product_id'=>'',
-            'orders'=>$orders
+            'clients'=>$orders
           ];
           $this->view('pages/orders/add_order', $data);
         }
+      }
+
+
+      public function showOrder($id)
+      {
+       
+          $orders=$this->orderModel->getOrder();
+          $more = $this->orderModel->getinfo();
+         
+          $result = [];
+       
+            $result = array_merge($orders[0], $more[0]);
+       
+//           echo"<pre>";
+//           print_r($result);
+// return;
+          $data = [
+            // 'order_id'=>$id,
+           'orders'=>$result,
+          
+          ];
+          $this->view('pages/orders/show_order', $data);
+        
       }
 
 }

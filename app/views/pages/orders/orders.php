@@ -47,29 +47,33 @@
                   <th>client Id</th>
                   <th>date</th>
                   <th>Client name</th>
-                
+                  <th>Product name</th>
+                  <th>Quantity</th>
+                  <th class="text-center">Action</th>
                 </tr>
               </thead>
             
               <?php foreach($data['orders']as $order):?>
               <tbody>
                 <tr>
-                  <td><?php echo $order->order_id?></td>
-                  <td><?php echo $order->client_id?></td>
-                  <td><?php echo $order->date?></td>
-                  <td><?php echo $order->name?></td>
-                 
+                  <td><?php echo $order['order_id']?></td>
+                  <td><?php echo $order['client_id']?></td>
+                  <td><?php echo $order['date']?></td>
+                  <td><?php echo $order['name']?></td>
+                  <td><?php echo $order['product_name']?></td>
+                  <td><?php echo $order['quantity']?></td>
                   <td class="d-flex justify-content-around">
-                    <a href="#"><img class="wt-25" src="<?php echo PUBLICROOT?>./img/icons/trash-alt-solid.svg" alt=""/></a>
-                    <a href="#"><img class="wt-25" src="<?php echo PUBLICROOT?>./img/icons/edit-solid.svg" alt=""/></a>
-                  </td>
+             
+
+              <a  class="btn btn-primary" href="<?php echo URLROOT; ?>/orders/showOrder/<?=$order['order_id'] ?>">Print</a>
+            </td>
                 </tr>
-                <tr>
+                
               
               </tbody>
               <?php endforeach;?>
               
-            
+          
             </table>
           </div>
         </main>
