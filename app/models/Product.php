@@ -10,10 +10,10 @@ class Product{
     public function getProduct(){
       $this->db->query('SELECT *,
       products.product_id as productId,
-      admins.id as clientId
+      category.category_id as categoryId
       FROM products
-      INNER JOIN admins
-      on products.admin_id=admins.id
+      INNER JOIN category
+      on products.category_id= category.category_id
       
        ');
       $results=$this->db->resultSet();
@@ -59,7 +59,7 @@ class Product{
 }
 public function getProductById($id)
     {
-        $this->db->query('SELECT * FROM products WHERE product_id= :id');
+        $this->db->query('SELECT *, products.product_id as productId, category.category_id as categoryId FROM products INNER JOIN category on products.category_id= category.category_id WHERE product_id= :id');
         $this->db->bind(':id', $id);
         $row = $this->db->single();
         return $row;

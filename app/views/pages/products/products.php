@@ -39,7 +39,8 @@
           <th>Buying price</th>
           <th>Selling price</th>
           <th>Category Id</th>
-
+          <th>Category name</th>
+          <th>Quantity</th>
           <th>Image</th>
           <!-- <th>Admin name</th> -->
           <th class="text-center">Operations</th>
@@ -58,8 +59,9 @@
             <td><?php echo $product->product_name ?></td>
             <td><?php echo $product->buying_price . '$' ?></td>
             <td><?php echo $product->selling_price . '$' ?></td>
-            <td><?php echo $product->category_id ?></td>
-
+            <td><?php echo $product->categoryId ?></td>
+            <td><?php echo $product->category_name ?></td>
+            <td><?php echo $product->quantity ?></td>
             <td><img style="width: 50px;" src="<?= PUBLICROOT . '/img/' . $product->image_url ?>" alt="<?php echo $product->image_url ?>"></td>
             <!-- <td><?php echo $product->admin_id ?></td> -->
             <td class="d-flex justify-content-around">
