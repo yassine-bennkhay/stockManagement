@@ -16,7 +16,13 @@
     <?php flash('delete_message'); ?>
   </div>
 
-  <h2><?= $data['table'] ?>
+  <h2 class="d-flex justify-content-between"><?= $data['table'] ?>
+  <form action="<?php echo URLROOT; ?>/customers/searchCustomer" method="get">
+      <div class="input-group">
+        <input type="search" name="customer_id" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <button type="submit" name="search" class="btn btn-outline-primary">search</button>
+      </div>
+    </form>
     <!-- Go to customers controller and addCustomer method-->
     <a href="<?php echo URLROOT; ?>/customers/addCustomer" class="btn btn-primary pull-right float-right">
       <i class="fa fa-pencil"></i> Add a Customer

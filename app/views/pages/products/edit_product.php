@@ -25,7 +25,11 @@
                     <input type="number" name="selling_price" class="form-control form-control-lg <?php echo (!empty($data['selling_price_err'])) ? 'is-invalid' : ''; ?> " value=<?php echo $data['selling_price'] ?>>
                     <span class="invalid-feedback"><?php echo $data['selling_price_err'] ?></span>
                 </div>
-
+                <div class="form-group">
+                    <label for="quantity">Quantity:<sup>*</sup></label>
+                    <input type="number" name="quantity" class="form-control form-control-lg <?php echo (!empty($data['quantity_err'])) ? 'is-invalid' : ''; ?> " value=<?php echo $data['quantity'] ?>>
+                    <span class="invalid-feedback"><?php echo $data['quantity_err'] ?></span>
+                </div>
                 <select class="custom-select" name="category_id">
                     <option selected>Select a Category</option>
                     <?php foreach ($data['categories'] as $category) : ?>

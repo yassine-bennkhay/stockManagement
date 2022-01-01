@@ -35,7 +35,7 @@ class Products extends Controller
       $filename = $_FILES["fileToUpload"]["name"];
       $tempname = $_FILES["fileToUpload"]["tmp_name"];
       $folder   = "img/".basename($filename);
-      $isUploaded=move_uploaded_file($tempname, $folder);
+     // $isUploaded=move_uploaded_file($tempname, $folder);
     
       //Sanitize Customer Array=remove any illegal character
 
@@ -45,15 +45,18 @@ class Products extends Controller
         'image_url' => trim($filename),
         'product_name' => trim($_POST['product_name']),
         'buying_price' => trim($_POST['buying_price']),
-        'selling_price' => trim($_POST['selling_price']),
-        'category_id' =>trim($_POST['category_id']),
-        'admin_id' => trim($_SESSION['user_id']),
+        'selling_price'=> trim($_POST['selling_price']),
+        'quantity'     =>trim($_POST['quantity']),
+        'category_id'  =>trim($_POST['category_id']),
+        'admin_id'     => trim($_SESSION['user_id']),
+        
         //errors variables
         'image_err'=>'',
         'name_err' => '',
         'buying_price_err' => '',
         'selling_price_err' => '',
         'category_id_err' => '',
+        'quantity_err'=>'',
 
       ];
 
@@ -72,9 +75,10 @@ class Products extends Controller
       if (empty($data['category_id'])) {
         $data['category_id_err'] = 'Please choose a category';
       }
-      // if (empty($isUploaded==true)) {
-      //   flash('product_message', $isUploaded);
-      // }
+      if (empty($data['quantity'])) {
+        $data['quantity_err'] = 'Please enter quantity';
+      }
+     
       
    
 
@@ -138,12 +142,15 @@ class Products extends Controller
         'product_name' => trim($_POST['product_name']),
         'buying_price' => trim($_POST['buying_price']),
         'selling_price' => trim($_POST['selling_price']),
+        'quantity' => trim($_POST['quantity']),
         'category_id' =>$products->category_id,
         'id' => trim($_SESSION['user_id']),
         //errors variables
+       
         'name_err' => '',
         'buying_price_err' => '',
         'selling_price_err' => '',
+        'quantity_err'=>'',
         'category_id_err' => '',
 
       ];
@@ -163,10 +170,14 @@ class Products extends Controller
       if (empty($data['category_id'])) {
         $data['category_id_err'] = 'Please choose a category';
       }
+      if (empty($data['quantity'])) {
+        $data['quantity_err'] = 'Please enter a quantity';
+      }
+
 
       //Make sure there are no errors
 
-      if (empty($data['buying_price_err']) && empty($data['selling_price_err']) && empty($data['name_err']) && empty($data['category_id_err'])) {
+      if (empty($data['buying_price_err']) && empty($data['selling_price_err']) && empty($data['name_err']) && empty($data['quantity_err'])) {
         //Validated
         if ($this->productModel->editAProduct($data)) {
           flash('product_edit_message', 'The product has been added Successfully!');
@@ -187,7 +198,8 @@ class Products extends Controller
         'buying_price' => $products->buying_price,
         'selling_price' => $products->selling_price,
         'category_id' =>$products->category_id,
-        //'quantity' => '',
+        'quantity'=>$products->quantity,
+    
         'categories' => $categories
       ];
       $this->view('pages/products/edit_product', $data);

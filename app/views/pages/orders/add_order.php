@@ -13,7 +13,7 @@
             <select class="custom-select" name="client_id">
                     <option selected>Select a Client by his ID</option>
                     <?php foreach ($data['customer'] as $client) : ?>
-                        <option value="<?= $client['clientId']?>"><?= $client['clientId'].' : '.$client['name'] ?></option>
+                        <option value="<?= $client->client_id?>"><?= $client->client_id.' : '.$client->name ?></option>
                     <?php endforeach; ?>
                 </select>
                 <div class="form-group">

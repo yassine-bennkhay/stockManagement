@@ -74,7 +74,7 @@ class Orders extends Controller{
           }
         } else {
           $orders=$this->orderModel->getOrder();
-          $clients=$this->clientModel->getClient();
+          $clients=$this->orderModel->getClient();
       // echo "<pre>";
       // print_r($orders);
       // return;
@@ -83,6 +83,7 @@ class Orders extends Controller{
             'quantity' => '',
             'product_id'=>'',
             'clients'=>$orders,
+            'customer'=>$clients,
            // 'customer'=>$clients
 
           ];

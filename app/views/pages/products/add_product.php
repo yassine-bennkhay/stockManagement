@@ -27,6 +27,12 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="quantity">Quantity:<sup>*</sup></label>
+                    <input type="number" name="quantity" class="form-control form-control-lg <?php echo (!empty($data['quantity_err'])) ? 'is-invalid' : ''; ?> " value=<?php echo $data['quantity'] ?>>
+                    <span class="invalid-feedback"><?php echo $data['quantity_err'] ?></span>
+                </div>
+
+                <div class="form-group">
                     <label for="images">Image:<sup>*</sup></label>
 
                     <input type="file" name="fileToUpload" class="form-control form-control-lg <?php echo (!empty($data['image_err'])) ? 'is-invalid' : ''; ?> " value=<?php echo $data['image_url'] ?>>
