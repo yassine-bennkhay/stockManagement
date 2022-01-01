@@ -5,14 +5,14 @@
     <div class="col-md-6 mx-auto">
         <div class="card card-body bg-light mt-4 ">
             <div class="col-md-6 mx-auto text-center">
-                <h2>Add a Supply </h2>
+                <h2>Add an order </h2>
             </div>
 
             <!--it's going to the method addSupplier in the Supplier Controller class-->
             <form action="<?php echo URLROOT ?>/orders/addOrder" method="POST">
             <select class="custom-select" name="client_id">
                     <option selected>Select a Client by his ID</option>
-                    <?php foreach ($data['clients'] as $client) : ?>
+                    <?php foreach ($data['customer'] as $client) : ?>
                         <option value="<?= $client['clientId']?>"><?= $client['clientId'].' : '.$client['name'] ?></option>
                     <?php endforeach; ?>
                 </select>

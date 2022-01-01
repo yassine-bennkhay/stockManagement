@@ -7,6 +7,7 @@ class Orders extends Controller{
             redirect('users/login');
         }
         $this->orderModel=$this->model('Order');
+        $this->clientModel=$this->model('Client');
     }
     public function orders(){
         //get Orders
@@ -73,6 +74,7 @@ class Orders extends Controller{
           }
         } else {
           $orders=$this->orderModel->getOrder();
+          $clients=$this->clientModel->getClient();
       // echo "<pre>";
       // print_r($orders);
       // return;
@@ -80,7 +82,9 @@ class Orders extends Controller{
             'client_id' => '',
             'quantity' => '',
             'product_id'=>'',
-            'clients'=>$orders
+            'clients'=>$orders,
+           // 'customer'=>$clients
+
           ];
           $this->view('pages/orders/add_order', $data);
         }
