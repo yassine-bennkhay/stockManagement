@@ -106,7 +106,24 @@ class Products extends Controller
       $this->view('pages/products/add_product', $data);
     }
   }
+  public function searchProduct()
+  {
+    if (isset($_GET['product_id'])) {
+      $aProduct = [];
+      $aProduct[0] = $this->productModel->getProductById($_GET['product_id']);
+      // echo "<pre>";
+      // print_r($aProduct);
+      // return;
 
+      $data = [
+        'title' => 'Categories',
+        'table' => 'Categories Table',
+        'products' => $aProduct,
+      ];
+
+      $this->view('pages/products/products', $data);
+    }
+  }
 
   public function editProduct($id)
   {

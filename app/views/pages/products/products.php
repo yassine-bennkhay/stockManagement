@@ -14,24 +14,18 @@
     <h1 class="h2"><?= $data['title'] ?></h1>
     <?php echo flash('product_message') ?>
     <?php echo flash('delete_product_message') ?>
-    <div class="btn-toolbar mb-2 mb-md-0">
-      <div class="btn-group mr-2">
-        <button type="button" class="btn btn-sm btn-outline-secondary">
-          Share
-        </button>
-        <button type="button" class="btn btn-sm btn-outline-secondary">
-          Export
-        </button>
-      </div>
-      <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-        <span data-feather="calendar"></span>
-        This week
-      </button>
-    </div>
+
   </div>
 
-  <h2><?= $data['table'] ?>
+  <h2 class="d-flex justify-content-between"><?= $data['table'] ?>
+  <form action="<?php echo URLROOT; ?>/products/searchProduct" method="get">
+      <div class="input-group">
+        <input type="search" name="product_id" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <button type="submit" name="search" class="btn btn-outline-primary">search</button>
+      </div>
+    </form>
     <a href="<?php echo URLROOT; ?>/products/addProduct" class="btn btn-primary pull-right float-right">
+    
       <i class="fa fa-pencil"></i> Add a Product
     </a>
   </h2>
@@ -47,11 +41,17 @@
           <th>Category Id</th>
 
           <th>Image</th>
-          <th>Admin name</th>
+          <!-- <th>Admin name</th> -->
           <th class="text-center">Operations</th>
         </tr>
       </thead>
       <?php foreach ($data['products'] as $product) : ?>
+        <?php if (!isset($product->product_id)) {
+
+          flash('error', 'there is no product associated with this id', 'alert alert-danger');
+          flash('error');
+          return;
+        } ?>
         <tbody>
           <tr>
             <td><?php echo $product->product_id ?></td>
@@ -61,7 +61,7 @@
             <td><?php echo $product->category_id ?></td>
 
             <td><img style="width: 50px;" src="<?= PUBLICROOT . '/img/' . $product->image_url ?>" alt="<?php echo $product->image_url ?>"></td>
-            <td><?php echo $product->name ?></td>
+            <!-- <td><?php echo $product->admin_id ?></td> -->
             <td class="d-flex justify-content-around">
               <form class="pull-right" action="<?php echo URLROOT; ?>/products/deleteProduct/<?php echo $product->product_id ?>" method="post">
                 <input type="submit" value="Delete" class="btn btn-danger">

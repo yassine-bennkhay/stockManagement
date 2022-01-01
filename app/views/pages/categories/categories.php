@@ -16,7 +16,7 @@
     <?php flash('category_message'); ?>
     <?php flash('delete_category_message'); ?>
     <?php flash('category_edit_message'); ?>
-    <div class="btn-toolbar mb-2 mb-md-0">
+    <!-- <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group mr-2">
         <button type="button" class="btn btn-sm btn-outline-secondary">
           Share
@@ -29,7 +29,7 @@
         <span data-feather="calendar"></span>
         This week
       </button>
-    </div>
+    </div> -->
   </div>
 
   <h2 class="d-flex justify-content-between"><?= $data['table'] ?>
@@ -56,7 +56,7 @@
       <?php foreach ($data['categories'] as $category) : ?>
         <?php if (!isset($category->category_id)) {
 
-          flash('error', 'there is no category associated with this id');
+          flash('error', 'there is no category associated with this id','alert alert-danger');
           flash('error');
           return;
         } ?>
