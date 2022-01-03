@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Example 1</title>
+    <title><?= SITENAME?></title>
     <style>
         body {
             position: relative;
