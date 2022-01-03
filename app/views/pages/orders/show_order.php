@@ -113,7 +113,7 @@
                 </tr>
                 <tr>
                     <td class="service">Price per unit:</td>
-                    <td style="text-align:right"><?=$data['orders']['selling_price']?></td>
+                    <td style="text-align:right"><?=$data['orders']['selling_price'].'$'?></td>
 
                 </tr>
                 <tr>
@@ -123,7 +123,7 @@
                 </tr>
                 <tr>
                     <td class="grand total">GRAND TOTAL</td>
-                    <td class="grand total">$6,500.00</td>
+                    <td class="grand total"><?=($data['orders']['quantity']*$data['orders']['selling_price']).'$'?></td>
                 </tr>
             </tbody>
         </table>

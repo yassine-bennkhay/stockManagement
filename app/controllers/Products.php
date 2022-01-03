@@ -120,8 +120,8 @@ class Products extends Controller
       // return;
 
       $data = [
-        'title' => 'Categories',
-        'table' => 'Categories Table',
+        'title' => 'Products',
+        'table' => 'Products Table',
         'products' => $aProduct,
       ];
 
