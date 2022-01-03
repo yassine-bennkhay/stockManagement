@@ -122,7 +122,7 @@
 
                 </tr>
                 <tr>
-                    <td class="grand total">GRAND TOTAL</td>
+                    <td class="grand total">TOTAL</td>
                     <td class="grand total"><?=($data['orders']['quantity']*$data['orders']['selling_price']).'$'?></td>
                 </tr>
             </tbody>
