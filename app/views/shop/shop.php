@@ -35,30 +35,7 @@
                         <li class="nav__item">
                             <a href="#new" class="nav__link scroll-link">Shop Now</a>
                         </li>
-
-
-
-
-                        <li class="nav__close flex__center">
-                            <svg>
-                                <use xlink:href="./images/sprite.svg#icon-cross"></use>
-                            </svg>
-                        </li>
                     </ul>
-
-                    <div class="cart flex__center">
-                        <span>
-                            <svg>
-                                <use xlink:href="./images/sprite.svg#icon-cart-plus"></use>
-                            </svg>
-                        </span>
-                    </div>
-
-                    <div class="hamburger flex__center">
-                        <svg>
-                            <use xlink:href="./images/sprite.svg#icon-menu"></use>
-                        </svg>
-                    </div>
                 </div>
             </div>
         </nav>
@@ -72,17 +49,9 @@
                     </p>
                     <a href="#new" class="button hero__btn">Shop Now</a>
                 </div>
-
-                <div class="hero__right">
-
-                </div>
             </div>
 
-            <a href="#" class="go-down flex__center">
-                <svg>
-                    <use xlink:href="./images/sprite.svg#icon-angle-down"></use>
-                </svg>
-            </a>
+           
         </div>
     </header>
 
@@ -111,26 +80,13 @@
                     <?php endforeach; ?>
                
         </section>
-
-
-
-
-
-       
+    
     </main>
 
     <!-- Footer -->
     <footer id="footer" class="section footer">
         <div class="container">
             <div class="footer__top">
-                <div class="footer-top__box">
-                    <h3>EXTRAS</h3>
-                    <a href="#">Brands</a>
-                    <a href="#">Gift Certificates</a>
-                    <a href="#">Affiliate</a>
-                    <a href="#">Specials</a>
-                    <a href="#">Site Map</a>
-                </div>
                 <div class="footer-top__box">
                     <h3>INFORMATION</h3>
                     <a href="#">About Us</a>
@@ -150,36 +106,20 @@
                 <div class="footer-top__box">
                     <h3>CONTACT US</h3>
                     <div>
-                        <span>
-                            <svg>
-                                <use xlink:href="./images/sprite.svg#icon-location"></use>
-                            </svg>
-                        </span>
-                        43 Dream House, Dreammy street, 7131 Dreamville, USA
+                        
+                        43,Essalam, Safi,Morroco.
                     </div>
                     <div>
-                        <span>
-                            <svg>
-                                <use xlink:href="./images/sprite.svg#icon-envelop"></use>
-                            </svg>
-                        </span>
-                        company@gmail.com
+                        
+                       stockmanagement@gmail.com
                     </div>
                     <div>
-                        <span>
-                            <svg>
-                                <use xlink:href="./images/sprite.svg#icon-phone"></use>
-                            </svg>
-                        </span>
-                        456-456-4512
+                     
+                        0645645645
                     </div>
                     <div>
-                        <span>
-                            <svg>
-                                <use xlink:href="./images/sprite.svg#icon-paperplane"></use>
-                            </svg>
-                        </span>
-                        Dream City, USA
+                      
+                        Safi,Morocco
                     </div>
                 </div>
             </div>
@@ -188,7 +128,7 @@
     </footer>
 
 
-    <script src="<?=PUBLICROOT?>./js/shop.js"></script>
+   
 </body>
 
 </html>
