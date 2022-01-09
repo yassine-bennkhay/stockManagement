@@ -5,16 +5,19 @@ class Shop extends Controller{
     {
       
         //Load the Product Model
-        //$this->productModel=$this->model('Product');
+     $this->productModel=$this->model('Product');
     }
 
     public function shop(){
 
         //get Products
-        //$products=$this->productModel->getProduct();
+        $products=$this->productModel->getProduct();
+      //   echo "<pre>";
+      //  print_r($products); 
+      //   return;
         $data=[
           
-          //'products'=>$products,
+         'products'=>$products,
         ];
         $this->view('shop/shop',$data);
       }
