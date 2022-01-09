@@ -13,6 +13,11 @@ The main functionalities of the application are the following:
 
 * validating the order and generating a pdf report to give to the client.
 * add security to the application to restrict the no authenticated users.
+* ## Tech Stack
+
+**Client:** HTML, CSS, JAVASCRIPT, BOOTSTRAP
+
+**Server:** PHP, MYSQL, MVC
 
 ## 🔗 Let's get in touch!
 
@@ -21,3 +26,29 @@ The main functionalities of the application are the following:
 [![Instagram](https://img.shields.io/badge/instagram-1DA1F2?style=for-the-badge&logo=instagram&logoColor=white)](https://www.linkedin.com/in/yassine-bennkhay-0b73411b4/)
 [![Instagram](https://img.shields.io/badge/facebook-1DA1F2?style=for-the-badge&logo=facebook&logoColor=white)](https://web.facebook.com/profile.php?id=100006392266503)
 
+
+## Screenshots
+
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/sign_up.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/sign_in.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/dashboard.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/add_product.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/products.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/edit_product.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/remove_product.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/search.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/add_category.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/categories.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/edit_category.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/search_category.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/add_customer.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/customers.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/edit_customer.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/remove_customer.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/add_supplier.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/remove_supplier.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/add_supplies.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/supplies.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/add_order.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/orders.png)
+![App Screenshot](https://github.com/yassine-bennkhay/stockManagement/blob/master/screenshots/print.png)
