@@ -13,3 +13,4 @@ define('PUBLICROOT',URLROOT.'/public');
 define('IMAGEDERICTOREY',PUBLICROOT.'/img/');
 //SITE NAME
 define('SITENAME','Stock Management');
+define('SHOPNAME','YB-Company');

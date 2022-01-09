@@ -12,7 +12,7 @@
     <!-- StyleSheet -->
     <link rel="stylesheet" href="styles.css">
 
-    <title><?php echo SITENAME?></title>
+    <title><?php echo SHOPNAME?></title>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
         <nav class="nav">
             <div class="nav__center container">
                 <div class="logo">
-                    <h1><?php echo SITENAME?></h1>
+                    <h1><?php echo SHOPNAME?></h1>
                 </div>
 
                 <div class="nav__menu">
