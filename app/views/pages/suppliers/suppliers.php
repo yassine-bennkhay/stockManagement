@@ -19,7 +19,7 @@
 
   <h2 class="d-flex justify-content-between"><?= $data['table'] ?>
 
-  <form action="<?php echo URLROOT; ?>/categories/searchCategory" method="get">
+  <form action="<?php echo URLROOT; ?>/suppliers/searchSupplier" method="get">
       <div class="input-group">
         <input type="search" name="category_id" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
         <button type="submit" name="search" class="btn btn-outline-primary">search</button>
